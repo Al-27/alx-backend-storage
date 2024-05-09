@@ -1,0 +1,7 @@
+-- SQL COMMENT
+CREATE TABLE users IF NOT EXISTS(
+    id INTEGER PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(255),
+    country ENUM("US", "CO", "TN") NOT NULL
+);

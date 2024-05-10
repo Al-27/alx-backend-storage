@@ -2,9 +2,7 @@
 DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUser;
 DELIMITER $$
 
-CREATE PROCEDURE ComputeAverageWeightedScoreForUser 
-    @user_id INT
-AS
+CREATE PROCEDURE ComputeAverageWeightedScoreForUser(IN @user_id INT)
 BEGIN
 	UPDATE users SET average_score = (SELECT
 	SUM(corrections.score * projects.weight) / SUM(projects.weight)

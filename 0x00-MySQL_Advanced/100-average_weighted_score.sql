@@ -1,5 +1,7 @@
 -- SQL COMMENT
 DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUser;
+DELIMITER $$
+
 CREATE PROCEDURE ComputeAverageWeightedScoreForUser 
     @user_id INT
 AS
@@ -11,4 +13,7 @@ BEGIN
 	ON projects.id = corrections.project_id
 	WHERE corrections.user_id = @user_id)
 	WHERE users.id = @user_id;
-END
+
+END $$
+
+DELIMITER ;

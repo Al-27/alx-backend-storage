@@ -1,1 +1,2 @@
-# NoSQL
+# NoSQL - MongoDB
+shell and python

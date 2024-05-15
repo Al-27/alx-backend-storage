@@ -1,0 +1,2 @@
+// this is a comment
+db.school.find({name: {$regex: /^Holberton/}})

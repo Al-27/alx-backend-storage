@@ -6,7 +6,7 @@ def top_students(mongo_collection):
     """
     func
     """
-    students = [std for students in mongo_collection.find({})]
+    students = [std for std in mongo_collection.find({})]
     
     for student in students:
         name = student.name

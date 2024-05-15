@@ -9,11 +9,11 @@ def top_students(mongo_collection):
     students = [std for std in mongo_collection.find({})]
     
     for student in students:
-        name = student.name
+        name = student.get("name")
         tot_score = 0
-        for topic in student.topics:
-            tot_score += topic.scor
-        student.update({"averageScore": tot_score/len(student.topics)})
+        for topic in student["topics"]:
+            tot_score += topic.get("score")
+        student.update({"averageScore": tot_score/len(student["topics"])})
     
     return students
     
